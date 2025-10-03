@@ -10,13 +10,19 @@ import {
   ChevronRight,
   ChevronDown,
   Menu,
-  Music,
+  HelpCircle,
+  Package,
+  Calendar,
+  MessageSquare,
+  ClipboardList,
+  BanknoteArrowUp,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import logo from "../../assets/logo ayudane.png";
 
 // Sidebar Items
 const sidebarItems = [
@@ -26,9 +32,29 @@ const sidebarItems = [
     icon: LayoutDashboard,
   },
   {
+    title: "Earnings",
+    href: "/dashboard/earnings",
+    icon: BanknoteArrowUp,
+  },
+  {
     title: "Users",
     href: "/dashboard/users",
     icon: Users2,
+  },
+  {
+    title: "Providers",
+    href: "/dashboard/providers",
+    icon: Package,
+  },
+  {
+    title: "Categories",
+    href: "/dashboard/categories",
+    icon: ClipboardList,
+  },
+  {
+    title: "Withdraw Request",
+    href: "/dashboard/withdraw-request",
+    icon: Calendar,
   },
   {
     title: "Settings",
@@ -55,18 +81,36 @@ const sidebarItems = [
         href: "/dashboard/settings/about",
         icon: Info,
       },
+      {
+        title: "FAQ",
+        href: "/dashboard/settings/faq",
+        icon: HelpCircle,
+      },
     ],
+  },
+  {
+    title: "Support",
+    href: "/dashboard/support",
+    icon: MessageSquare,
   },
 ];
 
 // Logo Section
-function LogoSection({ name = "Dance Attix", title = "Admin Panel" }) {
+function LogoSection({ name = "Ayudame", title = "" }) {
   return (
     <Link to="/dashboard">
-      <div className="flex items-center p-4 sm:p-6 flex-col justify-center">
-        <img src="/logo.svg" alt="logo" className="w-8 h-8 sm:w-10 sm:h-10" />
-        <h1 className="text-xl sm:text-2xl font-bold mt-2">{name}</h1>
-        <p className="text-xs sm:text-sm mt-1">{title}</p>
+      <div className="flex flex-col sm:flex-row items-center gap-2  p-6 sm:p-8 bg-transparent">
+        {/* Logo */}
+        <div className="w-16 h-16 sm:w-16 sm:h-16 flex items-center justify-center">
+          <img src={logo} alt="Logo" className="w-full h-full object-contain" />
+        </div>
+        {/* Text Content */}
+        <div className="text-center sm:text-left">
+          <h1 className="text-2xl sm:text-2xl font-bold text-white">{name}</h1>
+          {title && (
+            <p className="text-sm sm:text-base text-white/70 mt-1">{title}</p>
+          )}
+        </div>
       </div>
     </Link>
   );
@@ -102,16 +146,16 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                     className={cn(
                       "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
                       isActive
-                        ? "bg-teal-50 text-[#017783] hover:bg-teal-100"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        ? "bg-white text-[#1C5941]"
+                        : "text-white hover:bg-white/10 hover:text-white"
                     )}
                   >
-                    <item.icon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     <span className="flex-1 text-left">{item.title}</span>
                     {expanded ? (
-                      <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <ChevronDown className="h-4 w-4" />
                     ) : (
-                      <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <ChevronRight className="h-4 w-4" />
                     )}
                   </Button>
                   <div
@@ -131,8 +175,8 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                                 className={cn(
                                   "w-full justify-start gap-2 h-7 sm:h-9 text-xs sm:text-sm",
                                   isChildActive
-                                    ? "bg-white text-[#017783]"
-                                    : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                    ? "bg-white text-[#1C5941]"
+                                    : "text-white hover:bg-white/10 hover:text-white"
                                 )}
                               >
                                 <child.icon className="h-3 w-3" />
@@ -152,11 +196,11 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                     className={cn(
                       "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
                       isActive
-                        ? "bg-white text-[#017783]"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        ? "bg-white text-[#1C5941]"
+                        : "text-white hover:bg-white/10 hover:text-white"
                     )}
                   >
-                    <item.icon className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     {item.title}
                   </Button>
                 </Link>
@@ -165,19 +209,19 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
           );
         })}
       </ul>
-      
+
       {/* Logout button at the bottom */}
-      <div className="mt-auto p-2 sm:p-4 border-t border-gray-200">
+      <div className="mt-auto p-2 sm:p-4 border-t border-white/20">
         <Link to="/logout" onClick={onLinkClick}>
           <Button
             variant="ghost"
             className={cn(
               "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
-              "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+              "text-white hover:bg-white/10 hover:text-white"
             )}
           >
-            <LogOut className="h-3 w-3 sm:h-4 sm:w-4" />
-            Logout
+            <LogOut className="h-4 w-4 sm:h-5 sm:w-5" />
+            Log Out
           </Button>
         </Link>
       </div>
@@ -188,14 +232,14 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
 // Desktop Sidebar
 function DesktopSidebar() {
   return (
-    <div className="hidden lg:flex h-full w-64 flex-col bg-[#E8E8E8] border-r border-gray-200">
+    <div className="hidden lg:flex h-full w-72 flex-col bg-[#2d5f4f] border-r border-gray-200">
       <LogoSection />
       <SidebarNav />
     </div>
   );
 }
 
-// Mobile Sidebar - Fixed burger button styling
+// Mobile Sidebar
 function MobileSidebar() {
   const [open, setOpen] = useState(false);
 
@@ -203,29 +247,16 @@ function MobileSidebar() {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button
-          variant="ghost"
+          variant=""
           size="icon"
-          className="lg:hidden text-white hover:bg-white/20 h-8 w-8 bg-transparent border border-white/20 transition-colors"
+          className="lg:hidden bg-[#2d5f4f] text-white hover:bg-white/20 h-8 w-8 border border-white/20 transition-colors"
         >
           <Menu className="h-4 w-4" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-64 p-0 sm:max-w-sm">
-        <div className="flex h-full flex-col bg-white">
-          {/* Mobile Logo */}
-          <div className="flex items-center p-4 border-b border-gray-200">
-            <div className="flex items-center gap-2">
-              <div className="bg-teal-600 p-1 sm:p-2 rounded-lg">
-                <Music className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              </div>
-              <div>
-                <h2 className="text-base sm:text-lg font-semibold text-gray-900">
-                  Dance Attix
-                </h2>
-                <p className="text-xs sm:text-sm text-gray-500">Admin Panel</p>
-              </div>
-            </div>
-          </div>
+      <SheetContent side="left" className="w-64 p-0 sm:max-w-sm bg-[#2d5f4f]">
+        <div className="flex h-full flex-col">
+          <LogoSection />
           <SidebarNav onLinkClick={() => setOpen(false)} isMobile={true} />
         </div>
       </SheetContent>

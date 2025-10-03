@@ -21,6 +21,13 @@ import AboutUs from "../pages/dashboardpages/about/AboutUs";
 import EditAbout from "../pages/dashboardpages/about/EditAbout";
 import AllNotifications from "../pages/dashboardpages/notification/AllNotifications";
 import AllUsers from "../pages/dashboardpages/user/AllUsers";
+// import FAQ from "../pages/dashboardpages/faq/FAQ";
+// import EditFAQ from "../pages/dashboardpages/faq/EditFAQ";
+// import Listings from "../pages/dashboardpages/listings/Listings";
+// import Providers from "../pages/dashboardpages/providers/Providers";
+// import Categories from "../pages/dashboardpages/categories/Categories";
+// import WithdrawRequest from "../pages/dashboardpages/withdraw/WithdrawRequest";
+// import Support from "../pages/dashboardpages/support/Support";
 
 const routes = createBrowserRouter([
   {
@@ -50,6 +57,11 @@ const routes = createBrowserRouter([
       { index: true, element: <DashboardOverview /> },
       { path: "notificatons", element: <AllNotifications /> },
       { path: "users", element: <AllUsers /> },
+      // { path: "listings", element: <Listings /> },
+      // { path: "providers", element: <Providers /> },
+      // { path: "categories", element: <Categories /> },
+      // { path: "withdraw-request", element: <WithdrawRequest /> },
+      // { path: "support", element: <Support /> },
 
       // Settings
       { path: "settings/profile", element: <Profile /> },
@@ -60,6 +72,8 @@ const routes = createBrowserRouter([
       { path: "settings/editprivacy", element: <EditPrivacyPolicy /> },
       { path: "settings/about", element: <AboutUs /> },
       { path: "settings/editabout", element: <EditAbout /> },
+      // { path: "settings/faq", element: <FAQ /> },
+      // { path: "settings/editfaq", element: <EditFAQ /> },
     ],
   },
 ]);
