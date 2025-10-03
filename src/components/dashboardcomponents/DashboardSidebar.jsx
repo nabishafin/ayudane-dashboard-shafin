@@ -26,31 +26,11 @@ import logo from "../../assets/logo ayudane.png";
 
 // Sidebar Items
 const sidebarItems = [
-  {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "Earnings",
-    href: "/dashboard/earnings",
-    icon: BanknoteArrowUp,
-  },
-  {
-    title: "Users",
-    href: "/dashboard/users",
-    icon: Users2,
-  },
-  {
-    title: "Providers",
-    href: "/dashboard/providers",
-    icon: Package,
-  },
-  {
-    title: "Categories",
-    href: "/dashboard/categories",
-    icon: ClipboardList,
-  },
+  { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { title: "Earnings", href: "/dashboard/earnings", icon: BanknoteArrowUp },
+  { title: "Users", href: "/dashboard/users", icon: Users2 },
+  { title: "Providers", href: "/dashboard/providers", icon: Package },
+  { title: "Categories", href: "/dashboard/categories", icon: ClipboardList },
   {
     title: "Withdraw Request",
     href: "/dashboard/withdraw-request",
@@ -61,11 +41,7 @@ const sidebarItems = [
     href: "/dashboard/settings",
     icon: Settings,
     children: [
-      {
-        title: "Profile",
-        href: "/dashboard/settings/profile",
-        icon: UserCog,
-      },
+      { title: "Profile", href: "/dashboard/settings/profile", icon: UserCog },
       {
         title: "Terms & Condition",
         href: "/dashboard/settings/terms",
@@ -76,37 +52,23 @@ const sidebarItems = [
         href: "/dashboard/settings/privacy",
         icon: FileText,
       },
-      {
-        title: "About Us",
-        href: "/dashboard/settings/about",
-        icon: Info,
-      },
-      {
-        title: "FAQ",
-        href: "/dashboard/settings/faq",
-        icon: HelpCircle,
-      },
+      { title: "About Us", href: "/dashboard/settings/about", icon: Info },
+      { title: "FAQ", href: "/dashboard/settings/faq", icon: HelpCircle },
     ],
   },
-  {
-    title: "Support",
-    href: "/dashboard/support",
-    icon: MessageSquare,
-  },
+  { title: "Support", href: "/dashboard/support", icon: MessageSquare },
 ];
 
 // Logo Section
 function LogoSection({ name = "Ayudame", title = "" }) {
   return (
     <Link to="/dashboard">
-      <div className="flex flex-col sm:flex-row items-center gap-2  p-6 sm:p-8 bg-transparent">
-        {/* Logo */}
-        <div className="w-16 h-16 sm:w-16 sm:h-16 flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row items-center gap-2 p-6 sm:p-8 bg-transparent">
+        <div className="w-16 h-16 flex items-center justify-center">
           <img src={logo} alt="Logo" className="w-full h-full object-contain" />
         </div>
-        {/* Text Content */}
         <div className="text-center sm:text-left">
-          <h1 className="text-2xl sm:text-2xl font-bold text-white">{name}</h1>
+          <h1 className="text-2xl font-bold text-white">{name}</h1>
           {title && (
             <p className="text-sm sm:text-base text-white/70 mt-1">{title}</p>
           )}
@@ -117,7 +79,7 @@ function LogoSection({ name = "Ayudame", title = "" }) {
 }
 
 // Sidebar Navigation List
-function SidebarNav({ onLinkClick, isMobile = false }) {
+function SidebarNav({ onLinkClick }) {
   const location = useLocation();
   const [expandedItems, setExpandedItems] = useState([]);
 
@@ -147,7 +109,7 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                       "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
                       isActive
                         ? "bg-white text-[#1C5941]"
-                        : "text-white hover:bg-white/10 hover:text-white"
+                        : "text-white hover:bg-white/20"
                     )}
                   >
                     <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -176,7 +138,7 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                                   "w-full justify-start gap-2 h-7 sm:h-9 text-xs sm:text-sm",
                                   isChildActive
                                     ? "bg-white text-[#1C5941]"
-                                    : "text-white hover:bg-white/10 hover:text-white"
+                                    : "text-white hover:bg-white/20"
                                 )}
                               >
                                 <child.icon className="h-3 w-3" />
@@ -197,7 +159,7 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
                       "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
                       isActive
                         ? "bg-white text-[#1C5941]"
-                        : "text-white hover:bg-white/10 hover:text-white"
+                        : "text-white hover:bg-white/20"
                     )}
                   >
                     <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -210,15 +172,12 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
         })}
       </ul>
 
-      {/* Logout button at the bottom */}
+      {/* Logout button */}
       <div className="mt-auto p-2 sm:p-4 border-t border-white/20">
         <Link to="/logout" onClick={onLinkClick}>
           <Button
             variant="ghost"
-            className={cn(
-              "w-full justify-start gap-2 h-8 sm:h-10 text-sm sm:text-base",
-              "text-white hover:bg-white/10 hover:text-white"
-            )}
+            className="w-full justify-start gap-2 h-8 sm:h-10 text-white hover:bg-white/20"
           >
             <LogOut className="h-4 w-4 sm:h-5 sm:w-5" />
             Log Out
@@ -232,7 +191,7 @@ function SidebarNav({ onLinkClick, isMobile = false }) {
 // Desktop Sidebar
 function DesktopSidebar() {
   return (
-    <div className="hidden lg:flex h-full w-72 flex-col bg-[#2d5f4f] border-r border-gray-200">
+    <div className="hidden lg:flex h-full w-72 flex-col bg-[#165039] border-r border-gray-200">
       <LogoSection />
       <SidebarNav />
     </div>
@@ -249,7 +208,7 @@ function MobileSidebar() {
         <Button
           variant=""
           size="icon"
-          className="lg:hidden bg-[#2d5f4f] text-white hover:bg-white/20 h-8 w-8 border border-white/20 transition-colors"
+          className="lg:hidden bg-[#2d5f4f] text-white h-8 w-8 border border-white/20"
         >
           <Menu className="h-4 w-4" />
         </Button>
@@ -257,17 +216,15 @@ function MobileSidebar() {
       <SheetContent side="left" className="w-64 p-0 sm:max-w-sm bg-[#2d5f4f]">
         <div className="flex h-full flex-col">
           <LogoSection />
-          <SidebarNav onLinkClick={() => setOpen(false)} isMobile={true} />
+          <SidebarNav onLinkClick={() => setOpen(false)} />
         </div>
       </SheetContent>
     </Sheet>
   );
 }
 
-// Export individual components
+// Exports
 export { DesktopSidebar, MobileSidebar };
-
-// Export Combined Sidebar (only for desktop use)
 export default function DashboardSidebar() {
   return <DesktopSidebar />;
 }
