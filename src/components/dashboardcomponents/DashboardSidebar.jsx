@@ -27,7 +27,7 @@ import logo from "../../assets/logo ayudane.png";
 // Sidebar Items
 const sidebarItems = [
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { title: "Earnings", href: "/dashboard/earnings", icon: BanknoteArrowUp },
+  { title: "earnings", href: "/dashboard/earnings", icon: BanknoteArrowUp },
   { title: "Users", href: "/dashboard/users", icon: Users2 },
   { title: "Providers", href: "/dashboard/providers", icon: Package },
   { title: "Categories", href: "/dashboard/categories", icon: ClipboardList },
