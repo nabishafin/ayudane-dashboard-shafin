@@ -205,14 +205,7 @@ export default function RecentTransactions() {
         open={viewDialog.open}
         onOpenChange={(open) => setViewDialog({ open, transaction: null })}
       >
-        <DialogContent className="sm:max-w-md bg-gradient-to-b from-blue-50 to-white">
-          <button
-            onClick={() => setViewDialog({ open: false, transaction: null })}
-            className="absolute right-4 top-4 rounded-full bg-red-600 text-white p-1.5 hover:bg-red-700 transition-colors"
-          >
-            <X className="h-4 w-4" />
-          </button>
-
+        <DialogContent className="sm:max-w-md bg-[#f5f5f0]">
           <DialogHeader className="border-b pb-4">
             <DialogTitle className="text-xl font-semibold text-gray-800">
               Transaction Details
@@ -277,7 +270,7 @@ export default function RecentTransactions() {
                 </Button>
                 <Button
                   onClick={handlePrint}
-                  className="flex-1 bg-emerald-700 hover:bg-emerald-800 text-white"
+                  className="flex-1 bg-[#1C5941] hover:bg-emerald-800 text-white"
                 >
                   <Printer className="h-4 w-4 mr-2" />
                   Print
