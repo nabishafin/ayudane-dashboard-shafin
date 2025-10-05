@@ -99,13 +99,13 @@ const EditTermsAndConditions = () => {
   return (
     <div className="bg-gray-100">
       {/* Header */}
-      <div className="bg-[#017783] text-white p-4 flex items-center gap-3">
+      <div className="bg-[#1C5941] text-white p-4 flex items-center gap-3 rounded-lg ">
         <ChevronLeft className="h-6 w-6" />
         <h1 className="text-lg font-medium">Edit Terms and Conditions</h1>
       </div>
 
       {/* Main Content */}
-      <div className="">
+      <div className="mt-5">
         <div className="mx-auto">
           <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
             {/* Toolbar */}
@@ -201,7 +201,7 @@ const EditTermsAndConditions = () => {
             <div className="p-4 border-t border-gray-200">
               <Button
                 onClick={handleSaveChanges}
-                className="bg-[#017783] hover:bg-[#015a63] text-white px-8 py-2 rounded-md"
+                className="bg-[#1C5941] hover:bg-[#015a63] text-white px-8 py-2 rounded-md"
               >
                 Save Changes
               </Button>

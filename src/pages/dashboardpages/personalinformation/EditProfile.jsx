@@ -3,14 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Upload } from "lucide-react";
+import { ArrowLeft, Upload } from "lucide-react";
 import flag from "../../../assets/flag.png";
 import { Link } from "react-router-dom";
 
 const EditProfile = () => {
   const [formData, setFormData] = useState({
-    name: "Isabela",
-    email: "Isabela@gmail.com",
+    name: "admin",
+    email: "admin@gmail.com",
     phone: "1234567890",
   });
 
@@ -45,7 +45,10 @@ const EditProfile = () => {
   return (
     <div className="min-h-screen font-sans bg-gray-50">
       {/* Header */}
-      <div className="bg-[#017783] text-white p-4 text-xl font-semibold flex justify-between items-center rounded-md">
+      <div className="bg-[#1C5941] text-white p-4 text-xl font-semibold flex gap-2 items-center rounded-md">
+        <Link to="/dashboard/settings/profile">
+          <ArrowLeft className="h-5 w-5 cursor-pointer hover:scale-110 transition-transform duration-200" />
+        </Link>
         <span>Edit Personal Information</span>
       </div>
 
@@ -93,7 +96,7 @@ const EditProfile = () => {
                 id="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#017783] focus:border-transparent"
+                className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1C5941] focus:border-transparent"
                 placeholder="Enter your name"
               />
             </div>
@@ -110,7 +113,7 @@ const EditProfile = () => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#017783] focus:border-transparent"
+                className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1C5941] focus:border-transparent"
                 placeholder="Enter your email"
               />
             </div>
@@ -132,7 +135,7 @@ const EditProfile = () => {
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   type="tel"
-                  className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#017783] focus:border-transparent"
+                  className="bg-white border border-gray-300 text-gray-800 py-2 px-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#1C5941] focus:border-transparent"
                   placeholder="Enter phone number"
                 />
               </div>
@@ -152,7 +155,7 @@ const EditProfile = () => {
               </div>
               <Button
                 onClick={handleSaveChanges}
-                className="flex-1 bg-[#017783] hover:bg-[#015a63] text-white"
+                className="flex-1 bg-[#1C5941] hover:bg-[#015a63] text-white"
               >
                 Save Changes
               </Button>

@@ -12,14 +12,14 @@ const TermsAndConditions = () => {
   return (
     <div className="font-sans pr-5">
       {/* Header */}
-      <h2 className="text-xl sm:text-2xl font-bold mb-5 text-white bg-[#017783] p-5 rounded-lg">
+      <h2 className="text-xl sm:text-2xl font-bold mb-5 text-white bg-[#1C5941] p-5 rounded-lg">
         Terms and Conditions
       </h2>
 
       {/* Edit Button */}
       <div className="flex justify-end p-4">
         <Link to="/dashboard/settings/editterms">
-          <Button className="bg-[#017783] hover:bg-[#015a63] text-white rounded-full flex items-center space-x-1 shadow-md">
+          <Button className="bg-[#1C5941] hover:bg-[#015a63] text-white rounded-full flex items-center space-x-1 shadow-md">
             <Edit className="h-4 w-4" />
             <span>Edit</span>
           </Button>
