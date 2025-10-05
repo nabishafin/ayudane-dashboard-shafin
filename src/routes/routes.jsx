@@ -27,6 +27,7 @@ import AllNotifications from "../pages/dashboardpages/notification/AllNotificati
 import Categories from "../pages/dashboardpages/categories/Categories";
 import WithdrawRequest from "@/pages/dashboardpages/withdrawrequest/WithdrawRequest";
 import ChangedPassword from "@/pages/dashboardpages/personalinformation/ChangedPassword";
+import { FAQSection } from "@/pages/dashboardpages/faq/FAQSection";
 // import FAQ from "../pages/dashboardpages/faq/FAQ";
 // import EditFAQ from "../pages/dashboardpages/faq/EditFAQ";
 // import Listings from "../pages/dashboardpages/listings/Listings";
@@ -82,7 +83,7 @@ const routes = createBrowserRouter([
       { path: "settings/editprivacy", element: <EditPrivacyPolicy /> },
       { path: "settings/about", element: <AboutUs /> },
       { path: "settings/editabout", element: <EditAbout /> },
-      // { path: "settings/faq", element: <FAQ /> },
+      { path: "settings/faq", element: <FAQSection /> },
       // { path: "settings/editfaq", element: <EditFAQ /> },
     ],
   },
