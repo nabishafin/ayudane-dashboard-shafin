@@ -1,14 +1,14 @@
 import React from "react";
-import UserList from "../../../components/dashboardcomponents/UserList";
+import ProviderList from "../../../components/dashboardcomponents/ProviderList";
 import OverviewStats from "../../../components/dashboardcomponents/OverviewStats";
 
-const AllUsers = () => {
+const Providers = () => {
   return (
     <div>
       <OverviewStats />
-      <UserList />
+      <ProviderList />
     </div>
   );
 };
 
-export default AllUsers;
+export default Providers;

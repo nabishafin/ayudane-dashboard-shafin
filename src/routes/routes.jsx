@@ -22,6 +22,7 @@ import EditAbout from "../pages/dashboardpages/about/EditAbout";
 import AllNotifications from "../pages/dashboardpages/notification/AllNotifications";
 import AllUsers from "../pages/dashboardpages/user/AllUsers";
 import Earnings from "../pages/dashboardpages/earnings/Earnings";
+import Providers from "../pages/dashboardpages/providers/Providers";
 // import FAQ from "../pages/dashboardpages/faq/FAQ";
 // import EditFAQ from "../pages/dashboardpages/faq/EditFAQ";
 // import Listings from "../pages/dashboardpages/listings/Listings";
@@ -59,7 +60,7 @@ const routes = createBrowserRouter([
       { path: "notificatons", element: <AllNotifications /> },
       { path: "users", element: <AllUsers /> },
       { path: "earnings", element: <Earnings /> },
-      // { path: "providers", element: <Providers /> },
+      { path: "providers", element: <Providers /> },
       // { path: "categories", element: <Categories /> },
       // { path: "withdraw-request", element: <WithdrawRequest /> },
       // { path: "support", element: <Support /> },

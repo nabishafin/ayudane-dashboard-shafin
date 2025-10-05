@@ -147,7 +147,7 @@ export function TransactionsTable() {
         </div>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="p-0">
         {/* Table */}
         <div className="rounded-md border">
           <Table>
