@@ -28,6 +28,7 @@ import Categories from "../pages/dashboardpages/categories/Categories";
 import WithdrawRequest from "@/pages/dashboardpages/withdrawrequest/WithdrawRequest";
 import ChangedPassword from "@/pages/dashboardpages/personalinformation/ChangedPassword";
 import { FAQSection } from "@/pages/dashboardpages/faq/FAQSection";
+import { InboxSection } from "@/pages/dashboardpages/support/InboxSection";
 // import FAQ from "../pages/dashboardpages/faq/FAQ";
 // import EditFAQ from "../pages/dashboardpages/faq/EditFAQ";
 // import Listings from "../pages/dashboardpages/listings/Listings";
@@ -68,7 +69,7 @@ const routes = createBrowserRouter([
       { path: "providers", element: <Providers /> },
       { path: "categories", element: <Categories /> },
       { path: "withdraw-request", element: <WithdrawRequest /> },
-      // { path: "support", element: <Support /> },
+      { path: "support", element: <InboxSection /> },
 
       // Settings
       { path: "settings/profile", element: <Profile /> },

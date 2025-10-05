@@ -63,8 +63,8 @@ const sidebarItems = [
 function LogoSection({ name = "Ayudame", title = "" }) {
   return (
     <Link to="/dashboard">
-      <div className="flex flex-col sm:flex-row items-center gap-2 p-6 sm:p-8 bg-transparent">
-        <div className="w-16 h-16 flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row items-center  p-6 sm:p-8 bg-transparent">
+        <div className="w-20 h-20 flex items-center justify-center">
           <img src={logo} alt="Logo" className="w-full h-full object-contain" />
         </div>
         <div className="text-center sm:text-left">
@@ -177,7 +177,7 @@ function SidebarNav({ onLinkClick }) {
         <Link to="/logout" onClick={onLinkClick}>
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2 h-8 sm:h-10 text-white hover:bg-white/20"
+            className="w-full justify-start gap-2 h-8 sm:h-10 hover:text-red-700 text-red-700 border-2 border-red-500 bg-white "
           >
             <LogOut className="h-4 w-4 sm:h-5 sm:w-5" />
             Log Out
