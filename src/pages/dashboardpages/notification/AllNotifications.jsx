@@ -1,7 +1,7 @@
 import React from "react";
 
 const AllNotifications = () => {
-  return <div>AllNotifications</div>;
+  return <div></div>;
 };
 
 export default AllNotifications;
