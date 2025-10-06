@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import logo from "../../assets/logo ayudane.png";
 
@@ -8,18 +9,25 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
+  const navigate = useNavigate(); // ✅ navigation hook
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // (Optional) You can add real auth logic here
     console.log("Sign in:", { username, password, rememberMe });
+
+    // ✅ After successful login → navigate to dashboard
+    navigate("/dashboard");
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center  p-4">
-      <div className="w-full max-w-md rounded-lg  bg-[#F3F8F4] p-8 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="w-full max-w-md rounded-lg bg-[#F3F8F4] p-8 shadow-lg">
         <div className="space-y-6">
           {/* Logo */}
           <div className="flex justify-center">
-            <div className="rounded-full  p-2">
+            <div className="rounded-full p-2">
               <div className="h-24 w-24 overflow-hidden rounded-full">
                 <img
                   src={logo}
@@ -38,7 +46,7 @@ export default function SignInPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Username Input */}
-            <div className="rounded-md  bg-white p-3">
+            <div className="rounded-md bg-white p-3">
               <input
                 type="text"
                 placeholder="User name"
@@ -49,7 +57,7 @@ export default function SignInPage() {
             </div>
 
             {/* Password Input */}
-            <div className="rounded-md  bg-white p-3">
+            <div className="rounded-md bg-white p-3">
               <div className="flex items-center gap-2">
                 <input
                   type={showPassword ? "text" : "password"}
@@ -91,6 +99,7 @@ export default function SignInPage() {
               </div>
               <button
                 type="button"
+                onClick={() => navigate("/forgot-password")} // ✅ optional route
                 className="text-sm text-gray-700 hover:text-gray-900"
               >
                 Forgot password?
