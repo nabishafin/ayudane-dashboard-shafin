@@ -12,7 +12,7 @@ import ResetPassword from "../pages/auth/ResetPassword";
 // Dashboard Pages
 import DashboardOverview from "../pages/dashboardpages/DashboardOverview/DashboardOverview";
 import Profile from "../pages/dashboardpages/personalinformation/Profile";
-import EditProfile from "../pages/dashboardpages/personalinformation/Editprofile";
+
 import TermsAndConditions from "../pages/dashboardpages/terms/TermsAndConditions";
 import EditTermsAndConditions from "../pages/dashboardpages/terms/EditTermsAndConditions";
 import PrivacyPolicy from "../pages/dashboardpages/privacypolicy/PrivacyPolicy";
@@ -29,6 +29,7 @@ import WithdrawRequest from "@/pages/dashboardpages/withdrawrequest/WithdrawRequ
 import ChangedPassword from "@/pages/dashboardpages/personalinformation/ChangedPassword";
 import { FAQSection } from "@/pages/dashboardpages/faq/FAQSection";
 import { InboxSection } from "@/pages/dashboardpages/support/InboxSection";
+import EditProfile from "@/pages/dashboardpages/personalinformation/EditProfile";
 // import FAQ from "../pages/dashboardpages/faq/FAQ";
 // import EditFAQ from "../pages/dashboardpages/faq/EditFAQ";
 // import Listings from "../pages/dashboardpages/listings/Listings";
